@@ -30,5 +30,10 @@ createApp({
     },
     methods: {
         // funzioni e metodi 
+
+        // per eliminere i task dalla lista 
+        deleteTask(taskIndex){
+            this.toDoList.splice(taskIndex, 1)
+        }
     },
 }).mount('#app');
