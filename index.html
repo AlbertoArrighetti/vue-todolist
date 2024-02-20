@@ -38,7 +38,9 @@
             class="task list-group-item d-flex justify-content-between align-items-center"
             >
                 <span 
+                class="change-text"
                 :class=" currentTask.done == true ? 'taskCompleted' : '' "
+                @click="currentTask.done == true ? currentTask.done = false : currentTask.done = true"
                 >
                     {{currentTask.text}}
                 </span>
