@@ -63,9 +63,8 @@
                 <span class="input-group-text">Nuovo To-do</span>
                 <input 
 
-
                     v-model="newTask"
-
+                    v-on:keyup.enter="addTask()"
 
                     type="text" 
                     class="form-control" 
