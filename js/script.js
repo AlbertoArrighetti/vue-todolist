@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
             // data
+            newTask: [],
+
             toDoList: [
                 {
                     text: 'Fare la spesa',
@@ -34,6 +36,13 @@ createApp({
         // per eliminere i task dalla lista 
         deleteTask(taskIndex){
             this.toDoList.splice(taskIndex, 1)
-        }
+        },
+
+        addTask(){
+            this.toDoList.push({text: this.newTask, done: false});
+
+            // cancello il contenuto del campo di input
+            this.newTask = "";
+        },
     },
 }).mount('#app');

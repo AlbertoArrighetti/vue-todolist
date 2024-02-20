@@ -26,7 +26,10 @@
             To Do List
         </h1>
 
-        <ul class="list-group">
+        <ul
+        v-if="toDoList.length > 0" 
+        class="list-group"
+        >
 
 
 
@@ -49,7 +52,40 @@
             
         </ul>
 
+        <p v-else>
+            Hai completato tutto quello che dovevi fare. Ottimo lavoro!!
+        </p>
 
+
+        <div id="add-task" class="py-4 ">
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Nuovo To-do</span>
+                <input 
+
+
+                    v-model="newTask"
+
+
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Cosa devi fare?" 
+                    aria-label="Testo del task" 
+                    aria-describedby="add-task"
+                >
+
+                <button 
+                    @click="addTask()"
+
+                    class="btn btn-outline-secondary" 
+                    type="button" 
+                    id="add-task"
+                >
+                    Crea
+                </button>
+
+            </div>
+        </div>
 
 
     </div>
