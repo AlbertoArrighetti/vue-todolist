@@ -37,7 +37,7 @@ createApp({
 
         // per eliminere i task dalla lista 
         deleteTask(taskIndex){
-            this.toDoList.splice(taskIndex, 1)
+            this.toDoList.splice(taskIndex, 1);
         },
 
         addTask(){
