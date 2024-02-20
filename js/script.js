@@ -6,6 +6,8 @@ createApp({
             // data
             newTask: [],
 
+            error: false,
+
             toDoList: [
                 {
                     text: 'Fare la spesa',
@@ -39,10 +41,16 @@ createApp({
         },
 
         addTask(){
-            this.toDoList.push({text: this.newTask, done: false});
+            if(this.newTask == ''){
+                this.error = true;
+            }else{
+                this.toDoList.push({text: this.newTask, done: false});
 
-            // cancello il contenuto del campo di input
-            this.newTask = "";
+                // cancello il contenuto del campo di input
+                this.newTask = "";
+                this.error = false;
+            }
+
         },
     },
 }).mount('#app');

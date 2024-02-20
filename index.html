@@ -65,7 +65,7 @@
                 <span class="input-group-text">Nuovo To-do</span>
                 <input 
 
-                    v-model="newTask"
+                    v-model.trim="newTask"
                     v-on:keyup.enter="addTask()"
 
                     type="text" 
@@ -85,6 +85,9 @@
                     Crea
                 </button>
 
+            </div>
+            <div v-if="error" class="text-danger">
+                Il campo non può essere vuoto.
             </div>
         </div>
 
